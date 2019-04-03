@@ -68,7 +68,19 @@ $bellefair: 'Bellefair', serif;
 .menus {
 	@include xy-cell();
 	@include breakpoint(medium) {
-		@include xy-cell(75%);
+		/* was this, but then he changed it to below @include xy-cell(75%); */
+		@include xy-cell(auto);
+	}
+	// Main Navigation for interior pages
+	.main-navigation {
+		/* menu-base changes li to inline */
+		@include menu-base();
+		@include flex-align(right, middle);
+		li {
+			a {
+				@include text-transform(uppercase);
+			}
+		}
 	}
 }
 
