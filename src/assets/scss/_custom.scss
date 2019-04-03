@@ -71,15 +71,49 @@ $bellefair: 'Bellefair', serif;
 		/* was this, but then he changed it to below @include xy-cell(75%); */
 		@include xy-cell(auto);
 	}
+	// social menu
+	.social-menu {
+		@include menu-base();
+		@include flex-align(center, middle);
+		@include breakpoint(medium) {
+		 	@include flex-align(right, middle);
+		}
+		a {
+			&:before {
+				display: inline-block;
+				font-family: 'Fontawesome';
+				font-size: rem-calc(30);
+				color: $white;
+				-webkit-font-smoothing: antialiased;
+				content: '\f08e';
+			}
+			&[href*="facebook.com"]::before { content: '\f082'; }
+			&[href*="twitter.com"]::before { content: '\f099'; }
+			&[href*="instagram.com"]::before { content: '\f16d'; }
+			&[href*="youtube.com"]::before { content: '\f16a'; }
+		}
+	}
+
 	// Main Navigation for interior pages
 	.main-navigation {
-		/* menu-base changes li to inline */
 		@include menu-base();
 		@include flex-align(right, middle);
-		
+		@include breakpoint(small only){
+			background-color: $primary-color;
+		}
 		li {
+			@include breakpoint(small only){
+				width: 100%;
+				text-align: center;
+			}
 			a {
 				@include text-transform(uppercase);
+				@include font-bold(700);
+				font-size: rem-calc(16);
+
+				&:hover {
+					color: $secondary-color;
+				}
 			}
 		}
 	}
