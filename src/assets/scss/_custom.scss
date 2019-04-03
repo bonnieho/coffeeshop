@@ -73,12 +73,15 @@ $bellefair: 'Bellefair', serif;
 	}
 	// Main Navigation for interior pages
 	.main-navigation {
+
 		/* menu-base changes li to inline */
+		
 		@include menu-base();
 		@include flex-align(right, middle);
 		li {
 			a {
 				@include text-transform(uppercase);
+
 			}
 		}
 	}
