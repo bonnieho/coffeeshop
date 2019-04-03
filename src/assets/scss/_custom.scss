@@ -1,6 +1,17 @@
+//fade effect mixin
+@mixin faded_black() {
+	background: linear-gradient(to bottom, rgba(0,0,0,.7) 20% , rgba(0,0,0,.3) );
+}
 
+
+.container {
+	@include xy-grid-container();
+}
 
 .site-header {
+	background-size: cover;
+	position: relative;
+	height: 100vh;
 	background-image: url(../img/featured/small/home.jpg);
 	@include breakpoint(medium) {
 		background-image: url(../img/featured/medium/home.jpg);
@@ -8,6 +19,45 @@
 	@include breakpoint(large) {
 		background-image: url(../img/featured/large/home.jpg);
 	}
-	background-size: cover;
-	height: 100vh;
+	.header-content {
+		.top-section {
+			@include xy-grid();
+			@include flex-align(center);
+			position: relative;
+			z-index: 1;
+
+			.logo {
+				@include xy-cell(6);
+				@include flex-align(center);
+				@include breakpoint(medium) {
+					@include xy-cell(25%);
+				}
+				img {
+					@include flex-align
+				}
+			}
+		}
+		.bottom-section {
+
+		}
+
+		&:after {
+			@include faded_black();
+			@include position(absolute, 0,0,0,0);
+			content: '';
+			/* width: 100%;
+			height: 100%; */
+			/* mixin to replace above */
+			@include box(100%, 100%);
+			min-height: rem-calc(600);
+		}
+	}
 }
+
+.menus {
+	@include xy-cell();
+	@include breakpoint(medium) {
+		@include xy-cell(75%);
+	}
+}
+
