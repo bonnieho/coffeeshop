@@ -3,6 +3,8 @@
 	background: linear-gradient(to bottom, rgba(0,0,0,.7) 20% , rgba(0,0,0,.3) );
 }
 
+//Bellefair font (Google font)
+$bellefair: 'Bellefair', serif;
 
 .container {
 	@include xy-grid-container();
@@ -38,7 +40,16 @@
 			}
 		}
 		.bottom-section {
-
+			.slogan {
+				color: $white;
+				position: relative;
+				z-index: 1;
+				text-align: center;
+				@include font-bold(900);
+				/* text-transform: uppercase; */
+				/* mixin for this below */
+				@include text-transform(uppercase);
+			}
 		}
 
 		&:after {
