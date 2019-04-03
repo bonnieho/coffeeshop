@@ -10,6 +10,36 @@
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
 <body>
+	<header class="site-header">
+		<div class="container">
+			<div class="header-content">
+				<div class="top-section">
+					<div class="logo">
+						<img src="assets/img/logo.svg" alt="Coffeeshop Logo" />
+					</div><!-- END .logo -->
+					<div class="menu">
+						<nav class="social-menu">
+							<a href="https://facebook.com">Facebook</a>
+							<a href="https://twitter.com">Twitter</a>
+							<a href="https://instagram.com">Instagram</a>
+							<a href="https://youtube.com">YouTube</a>s
+						</nav>
+						<nav id="main-nav" class="main-navigation">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="#">About Us</a></li>
+							<li><a href="#">Process</a></li>
+							<li><a href="#">Menu</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</nav>
+					</div>
+				</div><!-- END .top-section -->
+				<div class="bottom-section">
+					<h1>{{slogan}}</h1>
+				</div><!-- END .bottom-section -->
+			</div><!-- END .header-content -->
+		</div><!-- END .container -->
+	</header>
 
 {{!-- Pages you create in the src/pages/ folder are inserted here when the flattened page is created. --}}
 {{> body}}
