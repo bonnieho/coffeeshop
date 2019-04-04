@@ -104,6 +104,7 @@ $bellefair: 'Bellefair', serif;
 	}
 
 	.title-bar {
+		/* the 'darken' stuff is sass */
 		background-color: darken($primary-color, 10);
 	}
 
@@ -130,5 +131,18 @@ $bellefair: 'Bellefair', serif;
 			}
 		}
 	}
+}
+
+// Animation Menu
+// from github.com/zurb/motion-ui
+
+.menu-in {
+	/* @include mui-zoom(in, .1, 1); */
+	/* @include mui-slide(); */
+	@include mui-fade(in, .1, 1);
+}
+
+.menu-out {
+	@include mui-zoom(out, 1, .1, true, .5s, ease);
 }
 
