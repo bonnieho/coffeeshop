@@ -22,6 +22,9 @@ $bellefair: 'Bellefair', serif;
 		background-image: url(../img/featured/large/home.jpg);
 	}
 	.header-content {
+		padding-top: rem-calc(30);
+		/* mixin below - note: this one uses padding "units" */
+		/* @include padding(2); */
 		.top-section {
 			@include xy-grid();
 			@include flex-align(center);
@@ -40,6 +43,12 @@ $bellefair: 'Bellefair', serif;
 			}
 		}
 		.bottom-section {
+			@include margin(3);
+			@include breakpoint(medium) {
+				height: rem-calc(230);
+				@include flex();
+				@include flex-align(center, bottom);
+			}
 			.slogan {
 				color: $white;
 				position: relative;
@@ -92,6 +101,10 @@ $bellefair: 'Bellefair', serif;
 			&[href*="instagram.com"]::before { content: '\f16d'; }
 			&[href*="youtube.com"]::before { content: '\f16a'; }
 		}
+	}
+
+	.title-bar {
+		background-color: darken($primary-color, 10);
 	}
 
 	// Main Navigation for interior pages
