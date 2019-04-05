@@ -3,6 +3,16 @@
 	background: linear-gradient(to bottom, rgba(0,0,0,.7) 20% , rgba(0,0,0,.3) );
 }
 
+@mixin background_image($page) {
+	background-image: url(../img/featured/small/#{$page}.jpg);
+	@include breakpoint(medium) {
+		background-image: url(../img/featured/medium/#{$page}.jpg);
+	}
+	@include breakpoint(large) {
+		background-image: url(../img/featured/large/#{$page}.jpg);
+	}
+}
+
 //Bellefair font (Google font)
 $bellefair: 'Bellefair', serif;
 
@@ -14,12 +24,23 @@ $bellefair: 'Bellefair', serif;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
-	background-image: url(../img/featured/small/home.jpg);
-	@include breakpoint(medium) {
-		background-image: url(../img/featured/medium/home.jpg);
+	&.homepage {
+		@include background_image(home);
 	}
-	@include breakpoint(large) {
-		background-image: url(../img/featured/large/home.jpg);
+	&.about {
+		@include background_image(about);
+	}
+	&.contact {
+		@include background_image(contact);
+	}
+	&.menu {
+		@include background_image(menu);
+	}
+	&.gallery {
+		@include background_image(gallery);
+	}
+	&.process {
+		@include background_image(process);
 	}
 	.header-content {
 		padding-top: rem-calc(30);
