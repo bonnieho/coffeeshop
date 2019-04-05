@@ -246,7 +246,9 @@ $bellefair: 'Bellefair', serif;
 	}
 }
 
-/*  Internal Pages    */
+/*  ==== Internal Pages  ====  */
+
+/*  About Us  */
 
 main.page-about {
 	@include xy-grid();
@@ -278,6 +280,53 @@ main.page-about {
 		}
 		blockquote {
 			font-size: rem-calc(30);
+		}
+	}
+}
+
+
+/*  Process  */
+
+.page-process {
+	.process-container {
+		@include xy-grid();
+		.process-item {
+			@include xy-gutters($gutter-position: bottom);
+			@include xy-cell();
+			@include breakpoint(medium) {
+				@include xy-cell(6);
+			}
+		}
+		@include breakpoint(medium) {
+			@include odd() {
+				.process-image {
+					order: 2;
+				}
+				.process-content {
+					order: 1;
+				}
+			}
+		}
+	}
+	.process-content {
+		h3 {
+			color: $primary-color;
+			@include margin(1);
+			@include text-transform(uppercase);
+			@include font-bold(900);
+			&:after {
+				width: rem-calc(200);
+				height: rem-calc(2);
+				background-color: $secondary-color;
+				content: '';
+				display: block;
+				margin-top: rem-calc(10);
+			}
+		}
+		p {
+			font-size: rem-calc(18);
+			line-height: rem-calc(38);
+			margin-top: rem-calc(30);
 		}
 	}
 }
