@@ -20,6 +20,16 @@ $bellefair: 'Bellefair', serif;
 	@include xy-grid-container();
 }
 
+.main-content {
+	background-color: $white;
+	padding: rem-calc(5);
+	@include breakpoint(medium) {
+		margin-top: rem-calc(-120);
+		position: relative;
+		padding: rem-calc(50 80);
+	}
+}
+
 .site-header {
 	background-size: cover;
 	position: relative;
@@ -198,14 +208,14 @@ $bellefair: 'Bellefair', serif;
 				}
 			}
 		}
-		.copyright {
-			margin: 0;
-			color: $white;
-			text-align: center;
-			font-size: rem-calc(18);
-			@include padding(1, null, 1, null);
-			@include font-bold(900);
-		}
+	}
+	.copyright {
+		margin: 0;
+		color: $white;
+		text-align: center;
+		font-size: rem-calc(18);
+		@include padding(1, null, 1, null);
+		@include font-bold(900);
 	}
 }
 
