@@ -209,6 +209,68 @@ $bellefair: 'Bellefair', serif;
 	}
 }
 
+.heading-title {
+	color: $secondary-color;
+	text-align: center;
+	@include font-bold(900);
+	@include text-transform(uppercase);
+	font-size: rem-calc(18);
+	margin-top: rem-calc(40);
+	margin-bottom: rem-calc(100);
+	width: 100%;
+	span {
+		color: $primary-color;
+		font-size: rem-calc(38);
+		display: table;
+		margin: 0 auto;
+	}
+	&:after {
+		content: '';
+		/* to put everything in a box */
+		@include box(rem-calc(80), rem-calc(80));
+		background-image: url(../img/coffee.svg);
+		background-size: rem-calc(80);
+		background-repeat: no-repeat;
+		@include horizontal-center();
+		margin-top: rem-calc(-15);
+	}
+}
+
+/*  Internal Pages    */
+
+main.page-about {
+	@include xy-grid();
+	@include flex-align(justify,top);
+	.image {
+		@include xy-cell();
+		@include breakpoint(medium) {
+			@include xy-cell(50%);
+		}
+		.image-effect {
+			@include rotate(-10);
+			border: rem-calc(10) solid $white;
+			@include shadow();
+			width: 90%;
+			@include breakpoint(small only) {
+				margin-bottom: rem-calc(70);
+			}
+		}
+	}
+	.page-content {
+		@include xy-cell();
+		@include breakpoint(medium) {
+			@include xy-cell(50%);
+		}
+
+		p {
+			font-size: rem-calc(16);
+			line-height: rem-calc(40);
+		}
+		blockquote {
+			font-size: rem-calc(30);
+		}
+	}
+}
 
 
 
