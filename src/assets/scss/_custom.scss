@@ -252,7 +252,10 @@ $bellefair: 'Bellefair', serif;
 
 main.page-about {
 	@include xy-grid();
+			/* @include padding(2, 2, 4, 2); */
 	@include flex-align(justify,top);
+
+
 	.image {
 		@include xy-cell();
 		@include breakpoint(medium) {
@@ -335,6 +338,7 @@ main.page-about {
 
 .page-menu {
 	@include xy-grid();
+	padding-bottom: 0;
 	.menu-description {
 		@include xy-cell();
 		@include breakpoint(large) {
@@ -362,7 +366,6 @@ main.page-about {
 .our-menu {
 	background-image: url(../img/menu.jpg);
 	@include padding(3, null, 3, null);
-	height: rem-calc(600);
 	@include position(relative);
 	background-position: center center;
 	background-attachment: scroll;
@@ -393,15 +396,71 @@ main.page-about {
 		z-index: 10;
 	}
 	.menu-list {
-		.coffee {
-
-		}
-		.food {
-
+		@include xy-grid();
+		color: $white;
+		> div {
+			@include xy-cell();
+			@include breakpoint(medium) {
+				@include xy-cell(6);
+			}
+			h3 {
+				@include text-transform(uppercase);
+				@include font-bold(900);
+				text-align: center;
+				margin-bottom: rem-calc(40);
+			}
 		}
 	}
 }
 
+
+/*  Product List  */
+
+.product-list {
+	list-style: none;
+	margin: 0;
+	li {
+		margin-bottom: rem-calc(20);
+		@include flex();
+		@include xy-grid();
+		.product {
+			@include xy-cell(8);
+			p.name {
+				@include text-transform(uppercase);
+				@include font-bold(900);
+				font-size: rem-calc(18);			
+				}
+			p.description {
+				color: $secondary-color;
+				font-size: rem-calc(16);
+			}
+		}
+		.price {
+			@include xy-cell(4);
+			p {
+				text-align: right;
+				font-size: rem-calc(30);
+				@include breakpoint(small only) {
+                    font-size: rem-calc(26);
+                }
+				@include font-bold(900);
+			}
+		}
+		p {
+			margin: 0;
+		}
+	}
+}
+
+
+
+
+/*  Contact Us  */
+
+
+
+
+/*  Gallery  */
 
 
 
