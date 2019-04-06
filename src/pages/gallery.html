@@ -10,41 +10,72 @@ slogan: Enjoy A Delicious Cup of Coffee
 			<div class="gallery-top">
 				<div class="left-content">
 					<div class="gallery-item">
-						<img src="assets/img/gallery/gallery_01_small.jpg" alt="gallery image 01" />
+						<a href="#" data-open="image0">
+							<img src="assets/img/gallery/gallery_01_small.jpg" alt="gallery image 01" />
+						</a>
 					</div>
 				</div>
 				<div class="right-content">
 					<div class="right-container">
 						<div class="gallery-item two-cols">
-						<img src="assets/img/gallery/gallery_02_small.jpg" alt="gallery image 02" />
+							<a href="#" data-open="image1">
+								<img src="assets/img/gallery/gallery_02_small.jpg" alt="gallery image 02" />
+							</a>
 					</div>
 					<div class="gallery-item">
-						<img src="assets/img/gallery/gallery_03_small.jpg" alt="gallery image 03" />
+						<a href="#" data-open="image2">
+							<img src="assets/img/gallery/gallery_03_small.jpg" alt="gallery image 03" />
+						</a>
 					</div>
 					<div class="gallery-item">
-						<img src="assets/img/gallery/gallery_04_small.jpg" alt="gallery image 04" />
+						<a href="#" data-open="image3">
+							<img src="assets/img/gallery/gallery_04_small.jpg" alt="gallery image 04" />
+						</a>
 					</div>
 					<div class="gallery-item two-cols">
-						<img src="assets/img/gallery/gallery_05_small.jpg" alt="gallery image 05" />
+						<a href="#" data-open="image4">
+							<img src="assets/img/gallery/gallery_05_small.jpg" alt="gallery image 05" />
+						</a>
 					</div>
 				</div>
 			</div>
 			<div class="gallery-bottom">
 				<div class="gallery-item two-cols">
+					<a href="#" data-open="image5">
 						<img src="assets/img/gallery/gallery_06_small.jpg" alt="gallery image 06" />
+					</a>
 				</div>
 				<div class="gallery-item">
+					<a href="#" data-open="image6">
 						<img src="assets/img/gallery/gallery_07_small.jpg" alt="gallery image 07" />
+					</a>
 				</div>
 				<div class="right-content">
 					<div class="gallery-item">
+						<a href="#" data-open="image7">
 							<img src="assets/img/gallery/gallery_08_small.jpg" alt="gallery image 08" />
+						</a>
 					</div>
 					<div class="gallery-item">
-						<img src="assets/img/gallery/gallery_09_small.jpg" alt="gallery image 09" />
+						<a href="#" data-open="image8">
+							<img src="assets/img/gallery/gallery_09_small.jpg" alt="gallery image 09" />
+						</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</main>
 </div>
+
+{{#each gallery.gallery}}
+<!-- MODAL stuff -->
+<!-- ***  .reveal is the Foundation class for the modal *** -->
+<!-- with .reveal, you can use tiny, medium, and large to size the modal window -->
+<div class="reveal medium" id="image{{@index}}" data-reveal data-animation-in="reveal-in" data-animation-out="reveal-out">
+	<button class="close-button" data-close type="button">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<img src="{{this.url}}" />
+</div>
+{{/each}}
+
