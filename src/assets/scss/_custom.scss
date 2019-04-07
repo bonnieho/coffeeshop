@@ -34,6 +34,11 @@ $bellefair: 'Bellefair', serif;
 	background-size: cover;
 	position: relative;
 	height: 100vh;
+	/* creating a parallax effect for mobile devices */
+	background-attachment: scroll;
+	@include breakpoint(large) {
+		background-attachment: fixed;
+	}
 	&.homepage {
 		@include background_image(home);
 	}
@@ -185,6 +190,50 @@ $bellefair: 'Bellefair', serif;
 	@include mui-fade(out, 1, 0);
 }
 
+
+/* =======   INDEX page - About Us   ========= */
+
+.about-us-homepage {
+	@include breakpoint(medium) {
+		@include xy-cell(80%);
+		@include xy-cell-offset(10%);
+	}
+	p {
+		text-align: (center);
+		line-height: rem-calc(40);
+		font-size: rem-calc(18);
+	}
+	.category-icons {
+		@include xy-grid();
+		.icon {
+			@include xy-cell();
+			@include breakpoint(medium) {
+				@include xy-cell(1 of 3);
+			}
+			height: rem-calc(260);
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: rem-calc(120%);
+			@include flex();
+			@include flex-align(center, bottom);
+			&.coffee {
+				background-image: url(../img/icon_coffee.svg);
+			}
+			&.dessert {
+				background-image: url(../img/icon_dessert.svg);
+			}
+			&.tea {
+				background-image: url(../img/icon_tea.svg);
+			}
+			h3 {
+				text-align: center;
+				font-family: $bellefair;
+				color: $primary-color;
+				font-size: rem-calc(38);
+			}
+		}
+	}
+}
 
 
 // Footer
@@ -578,6 +627,38 @@ main.page-about {
 		font-size: rem-calc(18);
 		width: 100%;
 		height: auto;
+	}
+}
+
+.testimonials {
+	background-color: $white;
+	padding-top: rem-calc(70);
+	padding-bottom: rem-calc(70);
+	h2 {
+		margin-top: 0;
+	}
+}
+
+.slide-container {
+	@include xy-grid();
+	@include flex-align(center, middle);
+	.orbit {
+		background-color: $cream;
+		@include xy-cell(10);
+		border-left: rem-calc(5) solid $primary-color;
+		li {
+			div {
+				@include padding(2,4,2,4);
+				p {
+					@include font-italic();
+				}
+				h3 {
+					@include text-transform(uppercase);
+					font-size: rem-calc(16);
+					@include font-bold();
+				}
+			}
+		}
 	}
 }
 
