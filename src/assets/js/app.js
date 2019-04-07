@@ -7,6 +7,18 @@ import 'what-input';
 // This is why we have to use CommonJS require() here since it doesn't
 // have the hoisting behavior.
 window.jQuery = $;
+
+
+// SweetAlert
+
+import swal from 'sweetalert2/dist/sweetalert2.all.min.js';
+swal(
+	'Good Job!',
+	'You added sweet alert!',
+	'success'
+	);
+
+
 require('foundation-sites');
 
 // If you want to pick and choose which modules to include, comment out the above and uncomment

@@ -7,17 +7,23 @@ slogan: Better Beans, Better Coffee
 	<main class="main-content page-{{title}}">
 		<h2 class="heading-title">Reserve Your <span> Table Here </span></h2>
 		<div class="reservation-form">
-			<form method="post" id="contact-form">
+			<form method="post" id="contact-form" data-abide novalidate>
 				<div class="field-container">
 					<label for="name">
 						Your Name:
-						<input type="text" id="name" placeholder="Full Name" name="name" />
+						<input type="text" id="name" placeholder="Full Name" name="name" required />
+						<span class="form-error">
+							Error. The name field is mandatory.
+						</span>
 					</label>
 				</div>
 				<div class="field-container">
 					<label for="phone">
-						Phone or E-Mail:
-						<input type="text" id="phone" placeholder="Phone or E-Mail" name="phone" />
+						E-Mail:
+						<input type="text" id="phone" placeholder="E-Mail" name="email" required pattern="email" />
+						<span class="form-error">
+							Error. The e-mail field is mandatory.
+						</span>
 					</label>
 				</div>
 				<div class="field-container">
@@ -40,7 +46,11 @@ slogan: Better Beans, Better Coffee
 				<div class="field-container">
 					<label for="when">
 						When:
-						<input type="date" id="when" name="when" />
+						<input type="text" id="when" name="when" placeholder="DD/MM/YYYY" required pattern="day_month_year" />
+						<!-- 'day_month_year' is an established pattern for validation using Abide -->
+						<span class="form-error">
+							Error. Please select a date.
+						</span>
 					</label>
 				</div>
 				<div class="field-container">
