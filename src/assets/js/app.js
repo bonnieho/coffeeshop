@@ -11,7 +11,10 @@ window.jQuery = $;
 
 // SweetAlert
 
-import swal from 'sweetalert2/dist/sweetalert2.all.min.js';
+import Swal from 'sweetalert2'
+
+// CommonJS
+// const Swal = require('sweetalert2')
 
 
 
@@ -46,12 +49,12 @@ $(document)
     	url: form.attr('action'),
     	data: form.serialize(),
     	success: function(data) {
-    		var result = data;
+    		var result = trim(data);
     		var response = JSON.parse(result);
     		console.log(response);
     		swal(
     			response.message,
-    			'Thank you, ' + response.name + ' for your response!',
+    			'Thank you, ' + response.name + ' for your reservation!',
     			'success'
     			);
     	}
@@ -62,3 +65,8 @@ $(document)
     ev.preventDefault();
     console.log("Submit for form id "+ev.target.id+" intercepted");
   });
+
+function trim(str){
+	  var str=str.replace(/^\s+|\s+$/,'');
+	  return str;
+}
